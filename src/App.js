@@ -6,8 +6,7 @@ import ctxToDo from './context/context-todo';
 const App = () => {
   // List State
   const [todo, setTodo] = useState([
-    { id: 1, desc: 'Make Coffee', date: '04-24-2023', status: true },
-    { id: 2, desc: 'Make Tea', date: '04-24-2023', status: false },
+    { id: 1, desc: 'Demo', date: '04-24-2023', status: true },
   ]);
 
   // Updating Data State
