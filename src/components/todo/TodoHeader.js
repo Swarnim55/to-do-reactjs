@@ -10,6 +10,7 @@ const TodoHeader = () => {
 
   const filterHandler = () => {
     console.log(inputDate.current.value);
+    filterData(inputDate.current.value);
   };
 
   return (

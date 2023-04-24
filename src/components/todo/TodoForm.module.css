@@ -3,6 +3,9 @@
   background-color: #1f1f1f;
   margin: 3rem auto;
 }
+.update {
+  background-color: darkcyan;
+}
 .form form {
   width: 100%;
 

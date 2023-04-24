@@ -4,7 +4,7 @@ import Card from '../UI/Card';
 import ctxToDo from '../../context/context-todo';
 
 const TodoForm = () => {
-  const { addData } = useContext(ctxToDo);
+  const { addData, upData, saveUpdateData } = useContext(ctxToDo);
 
   const descInput = useRef();
   const dateInput = useRef();
@@ -23,16 +23,38 @@ const TodoForm = () => {
     addData(newData);
     e.target.reset();
   };
+  const updateHandler = (e) => {
+    e.preventDefault();
+    const newDesc = descInput.current.value;
+    const newDate = dateInput.current.value;
+    const updatedData = {
+      id: upData.id,
+      desc: newDesc,
+      date: newDate,
+      status: false,
+    };
+    saveUpdateData(updatedData);
+    e.target.reset();
+  };
   return (
-    <Card className={styles.form}>
-      <form onSubmit={submitHandler}>
+    <Card
+      className={
+        upData !== '' ? `${styles.update} ${styles.form}` : styles.form
+      }
+    >
+      <form onSubmit={upData !== '' ? updateHandler : submitHandler}>
         <input
           type="text"
           placeholder="Add Items To Your List"
           ref={descInput}
+          defaultValue={upData !== '' ? upData.desc : ''}
         />
-        <input type="date" default="1990/01/01" ref={dateInput} />
-        <button type="submit">+</button>
+        <input
+          type="date"
+          defaultValue={upData !== '' ? upData.date : ''}
+          ref={dateInput}
+        />
+        <button type="submit">{upData !== '' ? '📝' : '+'}</button>
       </form>
     </Card>
   );

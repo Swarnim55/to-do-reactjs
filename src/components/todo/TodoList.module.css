@@ -3,3 +3,48 @@
   background-color: #1f1f1f;
   margin: 3rem auto;
 }
+
+.todolist ul {
+  width: 100%;
+  padding: 0;
+
+  list-style: none;
+}
+
+.todolist li {
+  background-color: #ccc;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1rem;
+}
+
+.dateCard {
+  height: 5rem;
+  width: 5rem;
+  background-color: #1f1f1f;
+  padding: 1rem;
+}
+
+.dateCard span {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.descTxt {
+  height: 5rem;
+  min-width: 10rem;
+  width: 20rem;
+  background-color: #999;
+  padding: 0.5rem;
+}
+
+.todolist button {
+  height: 4rem;
+  width: 4rem;
+}
