@@ -1,0 +1,80 @@
+.form {
+  color: #fff;
+  background-color: #1f1f1f;
+  margin: 3rem auto;
+}
+.form form {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.form input {
+  margin: 0.5rem;
+  height: 2.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: 0.5px solid black;
+}
+
+.form input[type='text'] {
+  min-width: 20rem;
+  padding: 0 1rem;
+}
+.form input[type='date'] {
+  max-width: 15rem;
+  width: 10rem;
+
+  height: 2.5rem;
+}
+
+.form button {
+  height: 2.5rem;
+  width: 3rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.form button:hover {
+  background-color: chocolate;
+}
+@media (min-width: 427px) and (max-width: 639px) {
+  .form input[type='text'] {
+    min-width: 20rem;
+  }
+  .form input[type='date'] {
+    min-width: 18.5rem;
+  }
+}
+
+@media (min-width: 378px) and (max-width: 427px) {
+  .form input[type='text'] {
+    min-width: 17rem;
+  }
+  .form input[type='date'] {
+    min-width: 15.5rem;
+  }
+}
+
+@media (min-width: 331px) and (max-width: 378px) {
+  .form input[type='text'] {
+    min-width: 14rem;
+  }
+  .form input[type='date'] {
+    min-width: 12.5rem;
+  }
+}
+
+@media (max-width: 331px) {
+  .form input[type='text'] {
+    width: 150px;
+    min-width: 165px;
+  }
+  .form input[type='date'] {
+    width: 145px;
+  }
+}

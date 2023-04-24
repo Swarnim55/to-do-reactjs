@@ -1,0 +1,47 @@
+.todo {
+  color: #fff;
+  background-color: #1f1f1f;
+  margin: 3rem auto;
+}
+
+.todo header {
+  width: 100%;
+  padding: 0 1rem;
+  font-size: 2rem;
+  text-align: left;
+}
+
+.todo main {
+  width: 100%;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+main .card {
+  font-size: 1rem;
+  background-color: #fff;
+  color: #000;
+  max-width: 8rem;
+  flex-basis: 100%;
+  padding: 1rem 1rem;
+  margin: 1rem;
+
+  font-weight: bold;
+}
+
+@media (min-width: 448px) and (max-width: 640px) {
+  .todo main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  main .card {
+    min-width: 15rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+}
