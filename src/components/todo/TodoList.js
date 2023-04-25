@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import styles from './TodoList.module.css';
 import Card from '../UI/Card';
 import ctxToDo from '../../context/context-todo';
@@ -28,7 +28,7 @@ const TodoList = () => {
   return (
     <Card className={styles.todolist}>
       <ul>
-        {items != '' ? (
+        {items !== '' ? (
           items.map((data) => {
             const nDate = new Date(data.date);
             const monthName = new Intl.DateTimeFormat('en-US', {
