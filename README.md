@@ -10,3 +10,4 @@
 8. Consumed handler function using useContext Hook to concat new object entry to the state variable.
 9. Used useContext in header to render stats of the user-requested date.
 10. Implemented Filter in header to render filtered list.
+11. Added Menu with list to provide edit, status change and delete functionality.

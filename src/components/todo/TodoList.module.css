@@ -1,7 +1,7 @@
 .todolist {
   color: #fff;
   background-color: #1f1f1f;
-  margin: 3rem auto;
+  margin: 2rem auto;
 }
 
 .todolist ul {
@@ -12,15 +12,22 @@
 }
 
 .todolist li {
-  background-color: #ccc;
+  background-color: goldenrod;
   padding: 0.5rem;
   margin: 1rem 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   border-radius: 1rem;
+}
+
+.todolist .complete {
+  background-color: darkgreen;
+}
+.todolist .complete .descTxt {
+  background-color: #ccc;
 }
 
 .todolist .empty {
@@ -43,14 +50,55 @@
 }
 
 .descTxt {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   height: 5rem;
-  min-width: 10rem;
-  width: 20rem;
-  background-color: #999;
-  padding: 0.5rem;
+  width: 100%;
+  background-color: #ccc;
+
+  border-radius: 0 1rem 1rem 0;
 }
 
+.txtData {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f1f1f;
+  padding: 0 0.5rem;
+
+  word-wrap: break-word;
+  max-height: 4rem;
+  overflow: hidden;
+}
+
+.todolist .menu {
+  background-color: #1f1f1f;
+  height: 5rem;
+  padding: 1rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.5rem;
+  min-width: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu li {
+  background-color: #1f1f1f;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.menu li:hover {
+  color: #999;
+}
+/* 
 .todolist button {
   height: 4rem;
   width: 4rem;
-}
+} */

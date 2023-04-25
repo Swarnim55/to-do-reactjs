@@ -3,7 +3,8 @@ import styles from './TodoList.module.css';
 import Card from '../UI/Card';
 import ctxToDo from '../../context/context-todo';
 const TodoList = () => {
-  const { todo, removeData, updateData, filterDate } = useContext(ctxToDo);
+  const { todo, removeData, updateData, filterDate, updateStatus } =
+    useContext(ctxToDo);
 
   const updateHandler = (id, desc, date) => {
     updateData(id, desc, date);
@@ -12,6 +13,11 @@ const TodoList = () => {
   const removeHandler = (id) => {
     removeData(id);
   };
+
+  const statusHandler = (id, status) => {
+    updateStatus(id, status);
+  };
+
   let items;
   if (filterDate !== '') {
     const len = todo.filter((ele) => ele.date === filterDate).length;
@@ -41,24 +47,32 @@ const TodoList = () => {
             const day = ('0' + nDate.getDate()).slice(-2);
 
             return (
-              <li key={data.id}>
+              <li
+                key={data.id}
+                className={data.status ? styles['complete'] : ''}
+              >
                 <Card className={styles.dateCard}>
                   <span>{day}</span>
 
                   <span>{month}</span>
                   <span>{year}</span>
                 </Card>
-                <div className={styles.descTxt}>{data.desc}</div>
-                <button
-                  type="button"
-                  onClick={() => updateHandler(data.id, data.desc, data.date)}
-                >
-                  📝
-                </button>
-                <button type="button" onClick={() => removeHandler(data.id)}>
-                  {' '}
-                  🗑️
-                </button>
+                <div className={styles.descTxt}>
+                  <div className={styles.txtData}>{data.desc}</div>
+                  <div className={styles.menu}>
+                    <li
+                      onClick={() =>
+                        updateHandler(data.id, data.desc, data.date)
+                      }
+                    >
+                      Edit
+                    </li>
+                    <li onClick={() => statusHandler(data.id, data.status)}>
+                      {data.status ? 'Reset' : 'Complete'}
+                    </li>
+                    <li onClick={() => removeHandler(data.id)}>Delete</li>
+                  </div>
+                </div>
               </li>
             );
           })

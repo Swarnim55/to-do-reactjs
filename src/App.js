@@ -61,6 +61,22 @@ const App = () => {
     setTodo(todo.filter((item) => item.id !== dataId));
   };
 
+  // Update status
+
+  const updateStatus = (id, status) => {
+    const toUpdateStatus = status ? false : true;
+    const toUpdateData = todo.map((ele) => {
+      if (ele.id === id) {
+        return {
+          ...ele,
+          status: toUpdateStatus,
+        };
+      } else {
+        return ele;
+      }
+    });
+    setTodo(toUpdateData);
+  };
   return (
     <ctxToDo.Provider
       value={{
@@ -72,6 +88,7 @@ const App = () => {
         upData,
         updateData,
         saveUpdateData,
+        updateStatus,
       }}
     >
       <TodoHeader />
