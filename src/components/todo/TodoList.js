@@ -15,10 +15,12 @@ const TodoList = () => {
   let items;
   if (filterDate !== '') {
     const len = todo.filter((ele) => ele.date === filterDate).length;
+
     if (len === 0) {
       items = '';
+    } else {
+      items = todo.filter((ele) => ele.date === filterDate);
     }
-    items = todo.filter((ele) => ele.date === filterDate);
   }
 
   if (filterDate === '') {
