@@ -20,6 +20,7 @@ const TodoForm = () => {
       date: inputDate,
       status: false,
     };
+
     addData(newData);
     e.target.reset();
   };
@@ -33,6 +34,7 @@ const TodoForm = () => {
       date: newDate,
       status: false,
     };
+
     saveUpdateData(updatedData);
     e.target.reset();
   };

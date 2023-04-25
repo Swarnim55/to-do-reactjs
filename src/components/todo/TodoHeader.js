@@ -9,7 +9,12 @@ const TodoHeader = () => {
   const inputDate = useRef();
 
   const filterHandler = () => {
-    console.log(inputDate.current.value);
+    // const newDate = new Date(inputDate.current.value);
+    // const dateYear = newDate.getFullYear();
+    // const day = ('0' + newDate.getDate()).slice(-2);
+    // const mnum = ('0' + (newDate.getMonth() + 1)).slice(-2);
+    // const checkDate = `${mnum}-${day}-${dateYear}`;
+
     filterData(inputDate.current.value);
   };
 

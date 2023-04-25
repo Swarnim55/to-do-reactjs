@@ -23,6 +23,12 @@
   border-radius: 1rem;
 }
 
+.todolist .empty {
+  justify-content: center;
+  color: #1f1f1f;
+  font-weight: 600;
+}
+
 .dateCard {
   height: 5rem;
   width: 5rem;
